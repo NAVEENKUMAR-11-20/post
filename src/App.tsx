@@ -10,10 +10,15 @@ function App() {
     if (savedTheme === 'dark') {
       setIsDarkMode(true);
       document.documentElement.classList.add('dark');
-    }
+    }else {
+    document.documentElement.classList.remove("dark");
+    setIsDarkMode(false);
+  }
   }, []);
 
   const toggleTheme = () => {
+    const nextTheme = !isDarkMode; // calculate new state
+  setIsDarkMode(nextTheme);
     setIsDarkMode(!isDarkMode);
     if (!isDarkMode) {
       document.documentElement.classList.add('dark');
