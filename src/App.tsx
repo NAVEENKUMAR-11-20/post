@@ -44,7 +44,7 @@ function App() {
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
                 <Code className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900 dark:text-white">DeepWare Studio</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white">DeepWare</span>
             </div>
 
             {/* Desktop Navigation */}
@@ -171,7 +171,7 @@ function App() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 animate-fade-up">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                Why Choose DeepWare Studio
+                Why Choose DeepWare 
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300">
                 Your success is our priority—here's what sets us apart
