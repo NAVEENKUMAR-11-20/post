@@ -1,33 +1,8 @@
-import  { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Code } from 'lucide-react';
+import { useState } from 'react';
+import { Menu, X, Code } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setIsDarkMode(true);
-      document.documentElement.classList.add('dark');
-    }else {
-    document.documentElement.classList.remove("dark");
-    setIsDarkMode(false);
-  }
-  }, []);
-
-  const toggleTheme = () => {
-    const nextTheme = !isDarkMode; // calculate new state
-  setIsDarkMode(nextTheme);
-    setIsDarkMode(!isDarkMode);
-    if (!isDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -44,7 +19,7 @@ function App() {
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
                 <Code className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900 dark:text-white">DenveX</span>
+              <span className="text-xl font-bold text-white">DenveX</span>
             </div>
 
             {/* Desktop Navigation */}
@@ -92,6 +67,7 @@ function App() {
       </section>
 
       {/* Main Content */}
+      <main>
         <section className="py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 animate-fade-up">
