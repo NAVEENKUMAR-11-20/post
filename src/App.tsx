@@ -34,9 +34,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen text-gray-100 selection:bg-blue-500/30">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#020617]/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -49,27 +49,15 @@ function App() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="https://www.denvex.in/" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">Home</a>
-              <a href="https://www.denvex.in/#services" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">Services</a>
-              <a href="https://www.denvex.in/#testimonials" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">Testimonials</a>
+              <a href="https://www.denvex.in/" className="text-gray-300 hover:text-blue-400 transition-colors duration-200">Home</a>
+              <a href="https://www.denvex.in/#services" className="text-gray-300 hover:text-blue-400 transition-colors duration-200">Services</a>
+              <a href="https://www.denvex.in/#testimonials" className="text-gray-300 hover:text-blue-400 transition-colors duration-200">Testimonials</a>
               <a href="https://www.denvex.in/register" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Start Project</a>
-              <button
-                onClick={toggleTheme}
-                className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-              >
-                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center space-x-2">
-              <button
-                onClick={toggleTheme}
-                className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-              >
-                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
-              <button onClick={toggleMenu} className="text-gray-700 dark:text-gray-300">
+            <div className="md:hidden flex items-center">
+              <button onClick={toggleMenu} className="text-gray-300 p-2">
                 {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
@@ -77,11 +65,11 @@ function App() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+            <div className="md:hidden border-t border-white/5 bg-[#020617]">
               <div className="px-2 pt-2 pb-3 space-y-1">
-                <a href="https://www.denvex.in/" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">Home</a>
-                <a href="https://www.denvex.in/#services" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">Services</a>
-                <a href="https://www.denvex.in/#testimonials" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">Testimonials</a>
+                <a href="https://www.denvex.in/" className="block px-3 py-2 text-gray-300 hover:text-blue-400 transition-colors duration-200">Home</a>
+                <a href="https://www.denvex.in/#services" className="block px-3 py-2 text-gray-300 hover:text-blue-400 transition-colors duration-200">Services</a>
+                <a href="https://www.denvex.in/#testimonials" className="block px-3 py-2 text-gray-300 hover:text-blue-400 transition-colors duration-200">Testimonials</a>
                 <a href="https://www.denvex.in/register" className="block px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">Start Project</a>
               </div>
             </div>
@@ -90,31 +78,27 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-16 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white">
-        <div className="absolute inset-0 bg-blue-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              Poster/Pamphlet Design
+            <h1 className="text-5xl lg:text-7xl font-extrabold mb-8 leading-tight tracking-tight text-white">
+              Poster & Pamphlet <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Design</span>
             </h1>
-            <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
+            <p className="text-xl lg:text-2xl mb-12 max-w-3xl mx-auto text-gray-400 leading-relaxed">
               Designing eye-catching and impactful posters and pamphlets that communicate your message effectively.
             </p>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
       </section>
 
       {/* Main Content */}
-      <main className="bg-white dark:bg-gray-900 transition-colors duration-300">
-        {/* What is Poster/Pamphlet Design */}
-        <section className="py-16 lg:py-24">
+        <section className="py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 animate-fade-up">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <div className="text-center mb-16 animate-fade-up">
+              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-8">
                 What is Poster/Pamphlet Design?
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-xl text-gray-400 leading-relaxed">
                 Poster and pamphlet design is the art of creating visually compelling printed materials that capture attention and deliver information effectively. It combines strategic layout, typography, color theory, and visual hierarchy to create designs that not only look beautiful but also serve their intended purpose—whether that's promoting an event, marketing a product, or communicating important information to your target audience.
               </p>
             </div>
@@ -122,13 +106,13 @@ function App() {
         </section>
 
         {/* Types of Designs */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-800">
+        <section className="py-24 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 animate-fade-up">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <div className="text-center mb-20 animate-fade-up">
+              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-8">
                 Types of Designs
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
+              <p className="text-xl text-gray-400">
                 We specialize in creating diverse design solutions for every need
               </p>
             </div>
@@ -152,11 +136,11 @@ function App() {
                   description: "High-impact promotional materials that build excitement and communicate key features for new product launches."
                 }
               ].map((item, index) => (
-                <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 animate-fade-up" style={{animationDelay: `${index * 0.1}s`}}>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                <div key={index} className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 animate-fade-up" style={{animationDelay: `${index * 0.1}s`}}>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="text-gray-400 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -167,13 +151,13 @@ function App() {
 
 
         {/* Why Choose Us */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-800">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 animate-fade-up">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+        <section className="py-24">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20 animate-fade-up">
+              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-8">
                 Why Choose DenveX
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
+              <p className="text-xl text-gray-400">
                 Your success is our priority—here's what sets us apart
               </p>
             </div>
@@ -202,10 +186,10 @@ function App() {
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-2xl font-bold text-white mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <p className="text-gray-400 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -216,23 +200,23 @@ function App() {
         </section>
 
         {/* Call to Action */}
-        <section className="relative py-16 lg:py-24 bg-gradient-to-r from-blue-600 to-blue-700">
-          <div className="absolute inset-0 bg-blue-600/20"></div>
+        <section className="relative py-24 overflow-hidden">
+          <div className="absolute inset-0 bg-blue-600/5"></div>
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="animate-fade-up">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Ready to Create Something Amazing?
+            <div className="animate-fade-up bg-white/5 backdrop-blur-md border border-white/10 p-12 rounded-3xl">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-8 leading-tight">
+                Ready to Create <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Something Amazing?</span>
               </h2>
-              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
                 Let's bring your vision to life with professional poster and pamphlet designs that make an impact.
               </p>
               <a 
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdHXVClcLzomQqmURl2nBidO5EcRkr3l8mdL6sD6frg6PjoWg/viewform?usp=header" 
-                className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-10 py-5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)]"
               >
                 Start Your Project
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                 </svg>
               </a>
             </div>
